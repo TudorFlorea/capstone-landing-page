@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size:10px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: #2A93C9;
+    height: 50px;
+    padding-top: 6px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.burger { 
+    cursor: pointer;
+    position: relative;
+    left: 15px;
+    top: 15px;
+}
+
+.burger span, .burger span:before, .burger span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+.burger span:before {
+  top: -10px; 
+}
+.burger span:after {
+  bottom: -10px;
+}
+
+.burger span, .burger span:before, .burger span:after {
+  transition: all 500ms ease-in-out;
+}
+.burger.active span {
+  background-color: transparent;
+}
+.burger.active span:before, .burger.active span:after {
+  top: 0;
+}
+.burger.active span:before {
+  transform: rotate(45deg);
+}
+.burger.active span:after {
+  transform: rotate(-45deg);
+}
+
+.dots span {
+    position: absolute;
+    right: 35px;
+    top: 25px;
+}
+
+.dots span, .dots span:before, .dots span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+.dots span:before {
+    top: -10px; 
+  }
+.dots span:after {
+    bottom: -10px;
+}
+
+.dots span, .dots span:before, .dots span:after {
+    transition: all 500ms ease-in-out;
+}
+
+.dots.active span {
+    height: 0px;
+    right: 50px;
+} 
+
+.dots.active span:before, .dots.active span:after {
+    top: 0;
+}
+
+.dots.active span:before {
+    width: 35px;
+    border-radius: 0px;
+    transform: rotate(45deg);
+  }
+.dots.active span:after {
+    width: 35px;
+    border-radius: 0px;
+    transform: rotate(-45deg);
+}
+
+#logo {
+    display: none;
+}
+
+/* #mobile-nav {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: rebeccapurple;
+} */
+
+/* #desktop-nav {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    max-width: 100px;
+    width: 70%;
+    height: 100%;
+    left: 15%;
+    background: rebeccapurple;
+} */
+
+.content {
+    height: 1000px;
+    background-color: #F1F3F9;
+}
+
+.hero {
+    padding-top: 3.5rem;
+    background-image: linear-gradient(180deg, rgba(61,121,155, 1), rgba(61,121,155, 0)), url("./media/doctors-1.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.hero--heading {
+    margin-top: 15rem;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.hero--link {
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 1.5rem 2.5rem;
+    border-radius: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #272727;
+    margin-bottom: 15rem;
+    margin-top: 3rem;
+}
+
+.hero--link:hover {
+    background-color: #2A93C9;
+    color: #fff;
+}
+
+/********************************************
+* INFO SECTION
+********************************************/
+
+.info {
+    background-color: #F1F3F9;
+    padding: 1rem 0;
+}
+
+.info-card {
+    width: 90%;
+    background-color: #2684B5;
+    color: #fff;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.info-card--heading-wrapper {
+    padding: 2rem 0 1rem 0;
+    margin: 0 2rem;
+    border-bottom: 1px solid rgba(255,255,255, 0.5);
+}
+
+.info-card--heading-image {
+    width: 30px;
+    height: auto;
+    display: inline-block;
+}
+
+.info-card--heading {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 2rem;
+    padding-top: 5px;
+}
+
+.info-card--content-wrapper {
+    padding: 0 2rem;
+}
+
+.info-card--opening-hours{
+    padding: 1rem 0;
+}
+
+.info-card--opening-hours--days,
+.info-card--opening-hours--time {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+    font-weight: 400;
+}
+
+.info-card--general-info {
+    font-size: 1.7rem;
+    padding: 2rem;
+    font-weight: 400;
+    color: #9CC5DA;
+}
+
+.info-card--content-heading {
+    color: #fff;
+    text-decoration: none;
+}
+
+.info-card--link {
+    font-size: 2rem;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    padding: 1.5rem 0;
+}
+
+.info-card--link:hover {
+    background: #333;
+    color: #fff;
+}
+
+
+
