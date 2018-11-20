@@ -190,7 +190,7 @@ header {
     background-color: #2684B5;
     color: #fff;
     text-align: center;
-    margin: 2rem auto;
+    margin: 2rem auto 6rem auto;
 }
 
 .info-card--heading-wrapper {
@@ -213,7 +213,7 @@ header {
 }
 
 .info-card--content-wrapper {
-    padding: 0 2rem;
+    padding: 1rem 2rem;
 }
 
 .info-card--opening-hours{
@@ -237,6 +237,9 @@ header {
 .info-card--content-heading {
     color: #fff;
     text-decoration: none;
+    font-size: 3rem;
+    margin: 3rem auto 2rem auto;
+    display: block;
 }
 
 .info-card--link {
@@ -254,5 +257,42 @@ header {
     color: #fff;
 }
 
+/********************************************
+* SKILLS SECTION
+********************************************/
 
+.skills {
+    background-color: #F1F3F9;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.skills--heading {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+.skills-card {
+    width: 100%;
+    margin: 4rem auto;
+}
+
+.skills-card--image {
+    display: block;
+    width: 125px;
+    height: 125px;
+    margin: 2rem auto;
+}
+
+.skills-card--heading {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.skills-card--info {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #909090;
+    margin: 1rem auto;
+}
 
