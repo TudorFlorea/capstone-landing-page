@@ -14,6 +14,16 @@ html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.clear-fix {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+.text-center {
+    text-align: center;
+}
+
 header {
     background-color: #2A93C9;
     height: 50px;
@@ -191,6 +201,7 @@ header {
     color: #fff;
     text-align: center;
     margin: 2rem auto 6rem auto;
+    border-radius: 0.5rem;
 }
 
 .info-card--heading-wrapper {
@@ -250,6 +261,8 @@ header {
     display: block;
     font-weight: 500;
     padding: 1.5rem 0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
 
 .info-card--link:hover {
@@ -275,6 +288,7 @@ header {
 .skills-card {
     width: 100%;
     margin: 4rem auto;
+    padding: 0 2rem;
 }
 
 .skills-card--image {
@@ -295,4 +309,475 @@ header {
     color: #909090;
     margin: 1rem auto;
 }
+
+/********************************************
+* Free Consultation SECTION
+********************************************/
+
+.free-consultation {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 8rem 2rem;
+}
+
+.free-consultation--heading {
+    font-size: 3.3rem;
+    font-weight: 500;
+}
+
+.free-consultation--info {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.free-consultation--link {
+    text-decoration: none;
+    color: #272727;
+    background-color: #fff;
+    padding: 1rem 2.4rem;
+    display: inline-block;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.free-consultation--link:hover {
+    background-color: #2A93C9;
+    color: #fff;
+}
+
+/********************************************
+* Diagnostic |Free Consultation| SECTION
+********************************************/
+
+#diagnostic {
+    background-image: url("./media/background-03-1920x939.jpg");
+}
+
+/********************************************
+* Our Services SECTION
+********************************************/
+.our-services {
+    background-color: #fff;
+    padding: 8rem 2rem;
+}
+
+.our-services--heading {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 6rem;
+    font-weight: 500;
+}
+
+.our-services--info {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 6rem;
+    font-weight: 400;
+    color: #9C9C9C;
+}
+
+.our-services--card {
+    margin: 2rem auto;
+}
+
+.our-services--card--image {
+    display: block;
+    width: 320px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.our-services--card--link {
+    display: block;
+    width: 320px;
+    background-color: #2A93C9;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 0 auto;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.our-services--card--link:hover {
+    background-color: #000;
+}
+
+/********************************************
+* Our Services SECTION
+********************************************/
+
+.team {
+    text-align: center;
+}
+
+.team--team-member {
+    margin-bottom: 4rem;
+}
+
+.team--team-member--image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.team--team-member--name {
+    padding: 4rem 0;
+    background-color: #2A93C9;
+    color: #fff;
+    font-size: 2.3rem;
+}
+
+.team--team-member--profile {
+    padding: 3rem 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
+.team--team-member--profile:hover {
+    color: #fff;
+    background: #000;
+}
+
+/********************************************
+* Testimonials SECTION
+********************************************/
+
+.testimonials {
+    background-color: #F1F3F9;
+    padding: 6rem 2rem;
+}
+
+.testimonial-card {
+    max-width: 450px;
+    margin: 6rem auto;
+}
+
+.testinanials--heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.testimonial-card--quote {
+    display: inline-block;
+    width: 6%;
+    vertical-align: top;
+    margin-right: 2%;
+}
+
+.testimonial-card--content {
+    display: inline-block;
+    width: 89%;
+    
+}
+
+.testimonial-card--content--text {
+    color: #898989;
+    font-size: 2.3rem;
+    font-style: italic;
+    font-weight:400;
+    padding-bottom: 2rem;
+}
+
+.testimonial-card--user--image {
+    float: left;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.testimonial-card--user--name {
+    color: #2A93C9;
+    font-size: 2.3rem;
+    font-weight: 500;
+    padding-top: 0.4rem;
+}
+
+.testimonial-card--user--type {
+    color: #BDBDBD;
+    font-size: 1.6rem;
+    padding-top: 0.4rem;
+    font-style: italic;
+}
+
+/********************************************
+* Pediatric |Free Consultation| SECTION
+********************************************/
+
+#pediatric {
+    background-image: url("./media/background-04-1920x980.jpg");
+}
+
+/********************************************
+* Blog Posts SECTION
+********************************************/
+
+.blog-posts {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+
+
+
+.blog-posts--heading {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    padding-bottom: 6rem;
+}
+
+.blog-post--image {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.blog-post--heading,
+.blog-post--date,
+.blog-post--category,
+.blog-post--exerpt,
+.blog-post p {
+    text-align: left;
+}
+
+.blog-post--heading {
+    display: block;
+    text-decoration: none;
+    font-size: 2.3rem;
+    color: #272727;
+    font-weight: 500;
+    padding-top: 2rem;
+    transition: all 0.3s linear;
+}
+
+.blog-post--heading:hover {
+    color: #51A7D3;
+}
+
+.blog-post--date {
+    color: #9C9C9C;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.blog-post--category {
+    color: #51A7D3;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 1rem 0;
+    transition: all 0.3s linear;
+}
+
+.blog-post--category:hover {
+    color: #555;
+}
+
+.blog-post--exerpt {
+    color: #434445;
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.blog-post--link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2A93C9;
+    color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s linear;
+}
+
+.blog-post--link:hover {
+    background-color: #000;
+}
+
+/********************************************
+* Footer SECTION
+********************************************/
+
+footer {
+    background-color: #2A93C9;
+    color: #fff;
+    padding: 2rem 2rem 4rem 2rem;
+
+}
+
+.footer--wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer--heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.horizontal-line {
+    height: 2px;
+    background-color: #fff;
+}
+
+.footer--newsletter {
+    padding: 4rem 0 8rem 0;
+}
+
+.footer--newsletter-info {
+    color: #B6CBDA;
+    font-size: 1.5rem;
+    margin: 2rem 0 1.4rem 0;
+}
+
+.email-wrapper {
+    position: relative;
+}
+
+#email-input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 73%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+#email-submit {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30%;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #000;
+    padding: 1.3rem;
+    border: 1px solid #000;
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+#email-submit:hover {
+    cursor: pointer;
+}
+
+.footer--contact {
+
+}
+
+.footer--contact-item {
+    padding: 1rem 0 1rem 2.6rem;
+    position: relative;
+}
+
+.footer--contact-item--image {
+    position: absolute;
+    top: 0.9rem;
+    left: 0;
+    width: 2.4rem;
+    height: auto;
+}
+
+.footer--contact-item--link,
+.footer--contact-item span {
+    color: #B6CBDA;
+    font-size: 1.5rem;
+}
+
+.footer--contact-item--link {
+    text-decoration: none;
+}
+
+.footer--contact-item--link:hover {
+    text-decoration: underline;
+    color: rgb(172, 190, 202);
+}
+
+.footer--social {
+    padding: 2rem 0 4rem 0;
+}
+
+.footer--social--logo {
+    display: block;
+    margin: 2rem auto;
+}
+
+.footer--social--icon-list {
+    list-style-type: none;
+}
+
+.icon-list-item {
+    display: inline-block;
+}
+
+.icon-list-item--wrapper {
+    width: 50px;
+    height: 40px;
+}
+
+.icon-list-item--overlay {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    display: block;
+}
+
+#facebook-icon:hover {
+    background-color: #3B5999;
+}
+
+#twitter-icon:hover {
+    background-color: #1D9CEB;
+}
+
+#google-plus-icon:hover {
+    background-color: #D6493C;
+}
+
+#instagram-icon:hover {
+    background-color: #7836AA;
+}
+
+.icon-list-item--logo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.copyright-info,
+.privacy-policy {
+    font-size: 1.5rem;
+    color: #B6CBDA;
+}
+
+.privacy-policy {
+    text-decoration: none;
+}
+
+.privacy-policy:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
 
