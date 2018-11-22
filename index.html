@@ -7,6 +7,10 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -47,11 +51,16 @@
         <ul class="nav--list">
             <li class="nav--list--item">
                 <a href="#" class="nav--link nav--link-active">
+                    <img id="nav-logo" src="./media/logo-dark.png">
+                </a>
+            </li>
+            <li id="nav-home" class="nav--list--item">
+                <a href="#" class="nav--link nav--link-active">
                     <span>HOME</span>
                 </a>
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-about" href="#" class="nav--link">
                     <span>ABOUT</span>
                 </a>
             </li>
@@ -61,7 +70,7 @@
                 </a>
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-pages" href="#" class="nav--link">
                     <span>PAGES &#10097;</span>
                 </a>
                 <ul class="nav--sub-nav">
@@ -214,39 +223,39 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav--list--item">
-                <a href="#" class="nav--link">
+            <li  class="nav--list--item">
+                <a id="nav-services" href="#" class="nav--link">
                     <span>SERVICES</span>
                 </a>
             </li>
-            <li class="nav--list--item">
-                <a href="#" class="nav--link">
+            <li  class="nav--list--item">
+                <a id="nav-departments" href="#" class="nav--link">
                     <span>DEPARTMENTS</span>
                 </a>
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-time" href="#" class="nav--link">
                     <span>TIME</span>
                 </a>
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-gallery" href="#" class="nav--link">
                     <span>GALLERY &#10097;</span>
                 </a>
 
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-blog" href="#" class="nav--link">
                     <span>BLOG &#10097;</span>
                 </a>
             </li>
             <li class="nav--list--item">
-                <a href="#" class="nav--link">
+                <a id="nav-contacts" href="#" class="nav--link">
                     <span>CONTACTS</span>
                 </a>
             </li>
             <li class="nav--list--item search-icon">
-                <a href="#" class="nav--link">
+                <a id="nav-search" href="#" class="nav--link">
                     <img id="search" src="./media/search-icon.png">
                 </a>
             </li>
