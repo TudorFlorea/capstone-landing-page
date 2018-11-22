@@ -14,6 +14,9 @@ html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    position: relative;
+}
 .clear-fix {
     clear: both;
     display: table;
@@ -27,9 +30,9 @@ html, body {
 header {
     background-color: #2A93C9;
     height: 56px;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 999;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
@@ -122,13 +125,7 @@ header {
     transform: rotate(-45deg);
 }
 
-#nav {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
+
 
 
 #logo {
@@ -139,30 +136,74 @@ header {
 }
 
 
-/* #mobile-nav {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100px;
-    height: 100%;
-    background: rebeccapurple;
-} */
-
-/* #desktop-nav {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    max-width: 100px;
-    width: 70%;
-    height: 100%;
-    left: 15%;
-    background: rebeccapurple;
-} */
-
-.content {
-    height: 1000px;
-    background-color: #F1F3F9;
+/* Mobile Navigation */
+#contact-wrapper {
+    display: none;
 }
+
+/* #nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+} */
+
+/************************************************************************************************** 
+************************************************************************************************** 
+***************************** DANGER ZONE BELOW *************************************************
+*********************************                ************************************************
+*********************************                 ************************************************/
+
+#nav {
+    margin:56px 0 0 0;
+    width: 270px;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: scroll;
+    background-color: #2A93C9;
+    z-index: 10;
+}
+
+
+.nav--list {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.nav--link {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* .nav--list {
+    list-style-type: none;
+    padding:30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+} */
+
+.nav--list--item {
+    
+}
+
+.nav--sub-nav {
+    display: none;
+}
+
+
+/*********************************            ***************************************************** 
+**********************************            **************************************************** 
+***************************** DANGER ZONE ABOVE *************************************************
+*********************************************************************************************************
+*********************************************************************************************************/
+
 
 .hero {
     padding-top: 3.5rem;
@@ -1130,6 +1171,7 @@ footer {
     header {
         background-color: transparent;
         box-shadow: none;
+        height: 5rem;
     }
 
     .burger,
@@ -1153,6 +1195,7 @@ footer {
         position: absolute;
         top: 2rem;
         right: 0;
+        display: block;
     }
 
     .contact--item-wrapper,
@@ -1198,6 +1241,21 @@ footer {
     }
 
     /* DESKTOP NAVBAR*/
+
+    #nav {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0;
+        bottom: auto;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        overflow: hidden;
+    }
+
     .nav--list {
         position: relative;
         list-style-type: none;
