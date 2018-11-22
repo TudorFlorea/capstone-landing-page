@@ -156,7 +156,7 @@ header {
 
 .hero {
     padding-top: 3.5rem;
-    background-image: linear-gradient(180deg, rgba(61,121,155, 1), rgba(61,121,155, 0)), url("./media/doctors-1.jpg");
+    background-image: linear-gradient(180deg, rgba(61,121,155, 1), rgba(61,121,155, 0)), url("./media/background-04-1920x980.jpg");
     background-position: top center;
     background-repeat: no-repeat;
     text-align: center;
@@ -221,7 +221,7 @@ header {
 .info-card--heading {
     display: inline-block;
     vertical-align: top;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-top: 5px;
 }
 
@@ -256,7 +256,7 @@ header {
 }
 
 .info-card--link {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #000;
     background-color: #fff;
     text-decoration: none;
@@ -394,14 +394,15 @@ header {
 
 .our-services--card--image {
     display: block;
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
     margin: 0 auto;
 }
 
 .our-services--card--link {
     display: block;
-    width: 320px;
+    max-width: 320px;
     background-color: #2A93C9;
     padding: 2rem 1.5rem;
     text-decoration: none;
@@ -477,7 +478,7 @@ header {
 
 .testimonial-card--quote {
     display: inline-block;
-    width: 6%;
+    width: 24px;
     vertical-align: top;
     margin-right: 2%;
 }
@@ -672,6 +673,8 @@ footer {
     width: 73%;
     padding: 1rem;
     border-radius: 0.5rem;
+    border: none;
+    outline: none;
 }
 
 #email-submit {
@@ -683,9 +686,8 @@ footer {
     color: #fff;
     background-color: #000;
     padding: 1.3rem;
-    border: 1px solid #000;
     border: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -727,6 +729,8 @@ footer {
 
 .footer--social--logo {
     display: block;
+    max-width: 160px;
+    width: 100%;
     margin: 2rem auto;
 }
 
@@ -790,10 +794,6 @@ footer {
 
 @media screen and (min-width: 480px) {
 
-    html {
-        font-size: 12px;
-    }
-
     #logo {
         display: block;
         margin: 0 auto;
@@ -817,6 +817,12 @@ footer {
         content: "";
     }
 
+    .info-card--content-wrapper:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
     .skills-card {
         width: 450px;
     }
@@ -827,9 +833,15 @@ footer {
         margin: 0 auto;
     }
 
-    .team--team-member,
+    .team--team-member {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .footer--wrapper,
-    .copyright-info {
+    .copyright-info,
+    .testimonial-card {
         width: 450px;
         margin-left: auto;
         margin-right: auto;
@@ -838,8 +850,17 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-    html {
-        font-size: 13px;
+
+    .hero--heading {
+        font-size: 4rem;
+    }
+
+    .hero--link {
+        margin-top: 4rem;
+    }
+
+    .info-card--heading-wrapper {
+        text-align: left;
     }
 
     .our-services .fixed-container {
@@ -847,10 +868,19 @@ footer {
         text-align: center;
     }
 
+    .skills--heading {
+        font-size: 3.5rem;
+    }
+
     .our-services--card {
         display: inline-block;
         padding: 15px;
     }
+
+    .free-consultation--heading {
+        font-size: 4rem;
+    }
+
 
     .our-services--card--link {
         font-size: 1.3rem;
@@ -858,8 +888,32 @@ footer {
         text-align: left;
     }
 
+    .our-services--info {
+        max-width: 550px;
+        margin: 0 auto 6rem auto;
+    }
+
+    .our-services--heading {
+        font-size: 4rem;
+    }
+
+    .blog-post {
+        width: 470px;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        margin: 10rem auto;
+        width: 750px;
+        min-width: 750px;
+    }
+
     #map {
         height: 450px;
+    }
+
+    .fixed-container {
+        width: 750px;
     }
 }
 
@@ -872,6 +926,59 @@ footer {
     .hero {
         text-align: left;
     }
+
+    .info-card {
+        display: inline-block;
+        height: 280px;
+        vertical-align: top;
+        position: relative;
+        transition: all 0.2s linear;
+        border: none;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
+
+    .info-card:hover {
+        transform: translateY(-52px);
+    }
+
+    .info-card:nth-child(odd) {
+        margin-right: -2px;
+        background-color: #2684B5;
+    }
+
+    .info-card:nth-child(even) {
+        background-color: #2A93C9;
+    }
+
+    .info-card:hover > .info-card--link {
+        transform: scaleY(1);
+    }
+
+    .info-card--link:hover ~ .info-card {
+        transform: translateY(-52px);
+    }
+
+    .info-card--link:hover {
+        transform: scaleY(1);
+    }
+
+    .info-card--link {
+        position: absolute;
+        bottom: -52px;
+        left: 0%;
+        width: 100%;
+        transform: scaleY(0);
+        transition: all 0.2s linear;
+        border-radius: 0;
+    }
+
+    .skills-card {
+        display: inline-block;
+        width: 33%;
+    }
+
 }
 
 
