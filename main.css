@@ -27,7 +27,7 @@ html, body {
 header {
     background-color: #2A93C9;
     height: 56px;
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -1125,6 +1125,78 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+
+    /* DESKTOP HEADER */
+    header {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .burger,
+    .dots {
+        display: none;
+    }
+
+    .header-wrapper {
+        width: 1170px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    #logo {
+        position: absolute;
+        top: 2rem;
+        left: 0;
+    }
+
+    #contact-wrapper {
+        position: absolute;
+        top: 2rem;
+        right: 0;
+    }
+
+    .contact--item-wrapper,
+    .contact--icon-overlay,
+    .contact--info-wrapper {
+        display: inline-block;
+    }
+
+    .contact--item-wrapper:first-child {
+        margin-right: 100px;
+    }
+    
+    .contact--icon-overlay {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(42, 147, 201, 0.4);
+        border-radius: 50%;
+    }
+
+    .contact--info-wrapper {
+        vertical-align: top;
+    }
+
+    .contact--icon {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+
+    .contact--info-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5rem;
+        display: block;
+        max-width: 200px;
+        margin-left: 10px;
+        margin-top: 2px;
+    }
+
+    .contact--info-link:hover {
+        text-decoration: underline;
+    }
+
     /* DESKTOP NAVBAR*/
     .nav--list {
         position: relative;
@@ -1144,7 +1216,22 @@ footer {
     .nav--list--item {
         float: left;
         font-size: 15px;
+        letter-spacing: 1.8px;
         transition: all 0.3s linear;
+    }
+
+    .nav--list--item:last-child .nav--link {
+        padding: 7px;
+    }
+
+    .search-icon {
+        float: right;
+        padding: 0;
+    }
+
+    #search {
+        width: 40px;
+        height: 40px;
     }
 
     .nav--list--item:hover .nav--sub-nav {

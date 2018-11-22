@@ -9,12 +9,37 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <!-- Mobile Navigation -->
-        <img id="logo" src="./media/logo-dark.png">
-        <a class="burger" href="#"><span></span></a>
-        <div class="dots">
-            <span></span>
+        <div class="header-wrapper">
+            <img id="logo" src="./media/logo-dark.png">
+            <a class="burger" href="#"><span></span></a>
+            <div class="dots"><span></span></div>
+            <div id="contact-wrapper">
+                <div class="contact--item-wrapper">
+                    <div class="contact--icon-overlay">
+                        <img class="contact--icon" src="./media/phone-logo.png">
+                    </div>
+                    <div class="contact--info-wrapper">
+                        <a class="contact--info-link" href="#">
+                            <span>1-800-1234-567</span>
+                        </a>
+                        <a class="contact--info-link" href="#">
+                            <span>1-800-3214-654</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact--item-wrapper">
+                    <div class="contact--icon-overlay">
+                        <img class="contact--icon" src="./media/map-marker-logo.png">
+                    </div>
+                    <div class="contact--info-wrapper">
+                        <a class="contact--info-link" href="#">
+                            <span>2130 Fulton Street San Diego CA 94117-1080 USA</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
     <!-- Navigation -->
@@ -220,9 +245,9 @@
                     <span>CONTACTS</span>
                 </a>
             </li>
-            <li class="nav--list--item">
+            <li class="nav--list--item search-icon">
                 <a href="#" class="nav--link">
-                    <span>ICON</span>
+                    <img id="search" src="./media/search-icon.png">
                 </a>
             </li>
         </ul>
