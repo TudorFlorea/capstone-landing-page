@@ -54,6 +54,25 @@ $(function() {
     }
   });
 
+  $(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    // Do something
+
+    console.log(scroll);
+    if(scroll >= 140) {
+      navContainer.css({
+        'position': 'fixed',
+        'top': 0
+      });
+    } else {
+      navContainer.css({
+        'position': 'absolute',
+        'top': 140
+      });
+    }
+    
+});
+
   function hideContactMenu() {
     isMobileContactOpen = false;
     $(dotsIcon).removeClass('active');
