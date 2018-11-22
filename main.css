@@ -122,12 +122,22 @@ header {
     transform: rotate(-45deg);
 }
 
+#nav {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+
 #logo {
     padding-top: 10px;
     width: 120px;
     height: auto;
     display: none;
 }
+
 
 /* #mobile-nav {
     position: absolute;
@@ -390,6 +400,7 @@ header {
 
 .our-services--card {
     margin: 2rem auto;
+    position: relative;
 }
 
 .our-services--card--image {
@@ -418,6 +429,28 @@ header {
     background-color: #000;
 }
 
+.our-services--card--link img {
+    width: 2rem;
+    height: 2rem;
+    transform: scale(0);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: all 0.3s linear;
+}
+
+.our-services--card--link span {
+    transition: all 0.2s linear;
+}
+
+.our-services--card--link:hover img {
+    transform: scale(1);
+}
+
+.our-services--card--link:hover span {
+    padding-left: 2rem;
+}
+
 /********************************************
 * Team SECTION
 ********************************************/
@@ -437,10 +470,19 @@ header {
 }
 
 .team--team-member--name {
-    padding: 4rem 0;
+    padding: 4rem 0 1rem 0;
     background-color: #2A93C9;
     color: #fff;
     font-size: 2.3rem;
+}
+
+.team--team-member--position {
+    font-size: 1.6rem;
+    background-color: #2A93C9;
+    color: #7FBEDF;
+    padding-bottom: 4rem;
+    font-style: italic;
+    display: none;
 }
 
 .team--team-member--profile {
@@ -927,6 +969,10 @@ footer {
         text-align: left;
     }
 
+    .info--cards-wrapper {
+        text-align: center;
+    }
+
     .info-card {
         display: inline-block;
         height: 280px;
@@ -979,7 +1025,240 @@ footer {
         width: 33%;
     }
 
+    .our-services--card--image {
+        max-width: 270px;
+    }
+
+    .our-services--card--link {
+        position: absolute;
+        width: 260px;
+        bottom: 25px;
+        left: 40px;
+        border-radius: 0.5rem;
+    }
+
+    .free-consultation--heading,
+    .free-consultation--info {
+        max-width: 470px;
+    }
+
+    .free-consultation--heading {
+        font-size: 5rem;
+    }
+
+    .team {
+        margin: 0 auto;
+    }
+
+    .team:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .team--team-member {
+        width: 20%;
+        margin: 0;
+        border: none;
+        padding: 0;
+        float: left;
+        overflow: hidden;
+    }
+
+    .team--team-member--info {
+        position: relative;
+        transition: all 0.2s linear;
+    }
+
+    .team--team-member--profile {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transform: scaleY(0);
+        transition: all 0.2s linear;
+    }
+
+    .team--team-member:hover > .team--team-member--info {
+        transform: translateY(-84px);
+    }
+
+    .team--team-member:hover a {
+        transform: scaleY(1);
+    }
+
+    .testimonial-card {
+        display: inline-block;
+        width: 50%;
+        min-width: 0px;
+    }
+
+    .team--team-member--position {
+        display: block;
+    }
+
+    .team--team-member:nth-of-type(odd) .team--team-member--position,
+    .team--team-member:nth-of-type(odd) .team--team-member--name {
+        background-color: #2684B4;
+    }
+
+    .blog-post {
+        display: inline-block;
+        width: 33%;
+        padding: 15px;
+        vertical-align: top;
+    }
+
+    .footer--wrapper {
+        width: 970px;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .footer--newsletter,
+    .footer--contact,
+    .footer--social {
+        flex-basis: 31.33%;
+        align-self: flex-start;
+        padding: 0 1% 5rem 1%;
+    }
 }
 
+@media screen and (min-width: 1200px) {
+    /* DESKTOP NAVBAR*/
+    .nav--list {
+        position: relative;
+        list-style-type: none;
+        max-width: 1170px;
+        margin: 2rem auto;
+        background-color: #2A93C9;
+        box-shadow: 0 0 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+
+    .nav--list:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .nav--list--item {
+        float: left;
+        font-size: 15px;
+        transition: all 0.3s linear;
+    }
+
+    .nav--list--item:hover .nav--sub-nav {
+        display: block;
+        visibility: visible;
+    }
+
+    .nav--link {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        line-height: 24px;
+        font-weight: 600;
+        padding: 18px 19px;
+        transition: all 0.3s linear;
+    }
+
+    .nav--link:hover {
+        background-color: #1D86BC;
+    }
+
+    .nav--link-active {
+        background-color: #1D86BC;
+    }
+
+    .nav--sub-nav {
+        position: absolute;
+        display: none;
+        visibility: hidden;
+        z-index: 9999;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        list-style-type: none;
+        transition: all 0.3s linear;
+    }
+
+    .sub-nav-list {
+        list-style-type: none;
+    }
+
+    .sub-nav-list {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .nav--sub-nav--item {
+        float: left;
+        width: 31%;
+        padding: 2% 2%;
+    }
+
+    .sub-nav-list {
+        display: block;
+    }
+
+    .sub-nav-list--item:first-child {
+        border-bottom: 1px solid rgba(0,0,0,0.24);
+    }
+
+    .sub-nav-list--item--heading {
+        color: #000;
+        padding-bottom: 1rem;
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    .sub-nav-list--item--link {
+        display: block;
+        text-decoration: none;
+        padding: 1rem 0;
+        font-size: 1.3rem;
+        color: #2A93C9;
+    }
+
+    .item--link--icon {
+        display: inline-block;
+        transform: scale(0);
+        transition: all 0.2s linear;
+    }
+
+    .item--link--text {
+        display: inline-block;
+        transition: all 0.2s linear;
+    }
+
+    .sub-nav-list--item--link:hover .item--link--icon {
+        padding-left: 1rem;
+        transform: scale(1);
+    }
+
+    .sub-nav-list--item--link:hover .item--link--text {
+        padding-left: 1.5rem;
+    }
+
+    .info--cards-wrapper {
+        width: 1170px;
+        position: relative;
+        top: -60px;
+    }
+
+    .info--cards-wrapper:after {
+        display: table;
+        content: "";
+        clear: both;
+    }
+
+    .info-card {
+        float: left;
+        width: 25%;
+    }
+}
 
 
