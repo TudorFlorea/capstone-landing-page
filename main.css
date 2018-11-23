@@ -1,3 +1,21 @@
+@keyframes rotate-45deg {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -193,14 +211,6 @@ header {
         text-decoration: underline;
     }
 
-/* #nav {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-} */
-
 /************************************************************************************************** 
 ************************************************************************************************** 
 ***************************** DANGER ZONE BELOW *************************************************
@@ -221,6 +231,41 @@ header {
     transition: all 0.3s;
 }
 
+.search-input-wrapper {
+
+}
+
+#search-input {
+    width: 100%;
+    border-radius: 2rem;
+    outline: none;
+    background-color: #2A93C9;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+    border: 1px solid #ccc;
+    padding: 1rem 2rem;
+    /* display: none; */
+}
+
+#search-input:focus ~ #search-input-label {
+    font-size: 1rem;
+    padding-top: 0;
+}
+
+#search-input-label {
+    position: absolute;
+    left: 0;
+    top: 97px;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    transition: all 0.3s linear;
+    /* display: none; */
+}
+
 
 .nav--list {
     list-style-type: none;
@@ -229,7 +274,7 @@ header {
 
 .nav--link {
     text-decoration: none;
-    color: #fff;
+    color: #9CCDE6;
     display: block;
 }
 
@@ -259,13 +304,7 @@ header {
 
 .sub-nav-list {
     list-style-type: none;
-    display: block;
-}
-
-.nav--sub-nav--item {
-    /* float: left;
-    width: 31%;
-    padding: 2% 2%; */
+    display: none;
 }
 
 .sub-nav-list--item:first-child {
@@ -274,7 +313,7 @@ header {
 
 .sub-nav-list--item--heading {
     list-style-type: none;
-    color: #fff;
+    color: #9CCDE6;
     padding: 1rem;
     padding-bottom: 1rem;
     font-size: 2rem;
@@ -287,7 +326,7 @@ header {
     text-decoration: none;
     padding: 1rem 0;
     font-size: 1.3rem;
-    color: #fff;
+    color: #9CCDE6;
 }
 
 .item--link--icon {
@@ -317,6 +356,28 @@ header {
 *********************************************************************************************************
 *********************************************************************************************************/
 
+#scoll-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2A93C9;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    z-index: 900;
+}
+
+#scoll-top:hover {
+    background-color: #76D48F;
+}
+
+#scoll-top-img {
+    width: 20px;
+    height: 20px;
+    margin: 15px;
+}
 
 .hero {
     padding-top: 3.5rem;
@@ -462,6 +523,7 @@ header {
     width: 125px;
     height: 125px;
     margin: 2rem auto;
+    animation: rotate-45deg 4s infinite;
 }
 
 .skills-card--heading {
@@ -1012,6 +1074,10 @@ footer {
         margin: 0 auto;
     }
 
+    #nav-logo {
+        display: none;
+    }
+
     .info-card {
         width: 450px;
     }
@@ -1067,6 +1133,10 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+
+    #search-input-label {
+        top: 38px;
+    }
 
     .hero--heading {
         font-size: 4rem;
@@ -1409,6 +1479,40 @@ footer {
         overflow: visible;
     }
 
+    #search-input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 5%;
+        bottom: 0;
+        width: 95%;
+        border-radius: 0.5rem;
+        outline: none;
+        background-color: #2A93C9;
+        border: none;
+        color: #fff;
+        font-size: 3rem;
+        padding-left: 3rem;
+        display: none;
+    }
+
+    #search-input:focus ~ #search-input-label {
+        font-size: 1rem;
+        padding-top: 0;
+    }
+
+    #search-input-label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #fff;
+        font-size: 3rem;
+        padding: 1rem;
+        padding-left: 3rem;
+        transition: all 0.3s linear;
+        display: none;
+    }
+
     .nav--list {
         position: relative;
         list-style-type: none;
@@ -1432,6 +1536,7 @@ footer {
         transition: all 0.3s linear;
         padding: 0;
     }
+
 
     .nav--list--item:last-child .nav--link {
         padding: 7px;
@@ -1542,7 +1647,6 @@ footer {
     .sub-nav-list--item--link:hover .item--link--text {
         padding-left: 1.5rem;
     }
-
 
     .hero--heading {
         margin-top: 25rem;
