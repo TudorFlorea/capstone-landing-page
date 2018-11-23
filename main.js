@@ -75,11 +75,11 @@ $(function() {
     //Toggle the mobile menu on burger click
     burgerIcon.on('click', function(e) {
       e.preventDefault();
-      $(".nav--sub-nav").toggleClass('display-none');
       if(isMobileMenuOpen) {
         hideMobileMenu();
       } else {
         showMobileMenu();
+        hideSubMenues();
       }
     });
   
@@ -109,16 +109,16 @@ $(function() {
   
     //Hide the mobile menu and calculate the position of the desktopmenu on window resize
     $(window).resize(function() {
-      
+
       hideMobileMenu();
       if(!isMobileNav()) {
         removeDisplayNoneSubMenues();
       }
-      
+
       positionNavOnResize();
-  
+
       positionDesktopNav();
-  
+
     });
   
     //Position the desktop navigation and the scrollToTop button on scroll
@@ -127,7 +127,6 @@ $(function() {
       if(isGDPROverlayShown) {
         window.scrollTo(0, 0);
       }
-
       positionDesktopNav();
   
       toggleScrollTopButton();
@@ -192,13 +191,25 @@ $(function() {
           'boxShadow': 'none'
         });
       }
+    } else {
+      navList.css({
+        'boxShadow': 'none',
+      });
+      navWrapper.css({
+        'backgroundColor': 'transparent',
+        'boxShadow': 'none'
+      });
+      navContainer.css({
+        'position': 'fixed',
+        'bottom': 0
+      });
     }
   }
 
 
   //show or hide the scroll button according to the scroll position
   function toggleScrollTopButton() {
-    if(scroll >= 400) {
+    if(getScrollTop() >= 400) {
       scrollTop.css({
         'display': 'block'
       });
@@ -207,6 +218,11 @@ $(function() {
         'display': 'none'
       });
     }
+  }
+
+  //hides submenues
+  function hideSubMenues() {
+    $(".nav--link").siblings(".nav--sub-nav").addClass('display-none');
   }
 
   //hides the gdpr modal
