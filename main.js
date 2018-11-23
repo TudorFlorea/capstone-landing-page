@@ -1,4 +1,6 @@
 $(function() {
+
+  //Cache elements
   var navContainer = $("#nav");
   var contactWrapper = $("#contact-wrapper");
   var burgerIcon = $(".burger");
@@ -12,76 +14,134 @@ $(function() {
   var isMobileMenuOpen = false;
   var isMobileContactOpen = false;
   var isDesktopSearchActive = false;
+  var isGDPROverlayShown = true;
+  var hideGDPROverlayCounter = 8;
+  var gdprCountdown = setInterval(decrementGDPRCounter, 1000);
 
-  $(".nav--link").on("click", function(e) {
-    if(isMobileNav()) {
+
+
+  //All event listeners
+  function registerEventListeners() {
+
+    //Toggle submenu on menu item click
+    $(".nav--link").on("click", function(e) {
+      if(isMobileNav()) {
+        e.preventDefault();
+        $(this).siblings(".nav--sub-nav").toggleClass('display-none');
+      }
+    });
+  
+    //Hide the mobile menu on body click
+    $('body').on('click', function() {
+      if(isMobileNav()) {
+        hideMobileMenu();
+        hideContactMenu();
+      }
+
+      hideGdprModal();
+      
+    });
+
+
+  
+    //Stop event bubbling to body click so that the menu will not hide if the click is on the menu or the header
+    $('#nav, header').on('click', function(e) {
+      e.stopPropagation();
+    });
+    
+    //Display the searchbar in search icon click
+    navSearchIcon.on('click', function(e) {
       e.preventDefault();
-      $(this).siblings(".nav--sub-nav").toggleClass('display-none');
-    }
-  });
-
-  $('body').on('click', function() {
-    if(isMobileNav()) {
-      hideMobileMenu();
-      hideContactMenu();
-    }
-    
-  });
-
-  $('#nav, header').on('click', function(e) {
-    e.stopPropagation();
-  });
+      if(!isDesktopSearchActive) {
+        isDesktopSearchActive = true;
+        navSearchInput.css({
+          'display': 'block'
+        });
+        navSearchInput.val('');
+        navSearchLabel.css({
+          'display': 'block'
+        });
+      } else {
+        isDesktopSearchActive = false;
+        navSearchInput.css({
+          'display': 'none'
+        });
+        navSearchLabel.css({
+          'display': 'none'
+        });
+      }
+    });
   
-  navSearchIcon.on('click', function(e) {
-    e.preventDefault();
-    if(!isDesktopSearchActive) {
-      isDesktopSearchActive = true;
-      navSearchInput.css({
-        'display': 'block'
-      });
-      navSearchInput.val('');
-      navSearchLabel.css({
-        'display': 'block'
-      });
-    } else {
-      isDesktopSearchActive = false;
-      navSearchInput.css({
-        'display': 'none'
-      });
-      navSearchLabel.css({
-        'display': 'none'
-      });
-    }
-  });
-
-  burgerIcon.on('click', function() {
-    if(isMobileMenuOpen) {
-      hideMobileMenu();
-    } else {
-      showMobileMenu();
-    }
-  });
-
-  dotsIcon.on('click', function() {
-    if(isMobileContactOpen) {
-      hideContactMenu();
-    } else {
-      showContactMenu();
-    }
-  });
-
-  scrollTop.click(function() {
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-    return false;
-  });
-
-  $(window).resize(function() {
-    
-    hideMobileMenu();
-    if(!isMobileNav()) {
-      removeDisplayNoneSubMenues();
-    }
+    //Toggle the mobile menu on burger click
+    burgerIcon.on('click', function(e) {
+      e.preventDefault();
+      $(".nav--sub-nav").toggleClass('display-none');
+      if(isMobileMenuOpen) {
+        hideMobileMenu();
+      } else {
+        showMobileMenu();
+      }
+    });
   
+    //Toggle the mobile contact on dots click
+    dotsIcon.on('click', function() {
+      if(isMobileContactOpen) {
+        hideContactMenu();
+      } else {
+        showContactMenu();
+      }
+    });
+
+    //close the gdpr modal
+    $('#gdpr-close, #gdpr-ok').on('click', function() {
+      hideGdprModal();
+    });
+
+    $('#gdpr-modal').on('click', function(e) {
+      e.stopPropagation();
+    });
+  
+    //Scroll to the top of the page on scroll
+    scrollTop.click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  
+    //Hide the mobile menu and calculate the position of the desktopmenu on window resize
+    $(window).resize(function() {
+      
+      hideMobileMenu();
+      if(!isMobileNav()) {
+        removeDisplayNoneSubMenues();
+      }
+      
+      positionNavOnResize();
+  
+      positionDesktopNav();
+  
+    });
+  
+    //Position the desktop navigation and the scrollToTop button on scroll
+    $(window).scroll(function (event) {
+  
+      if(isGDPROverlayShown) {
+        window.scrollTo(0, 0);
+      }
+
+      positionDesktopNav();
+  
+      toggleScrollTopButton();
+  
+    });
+  }
+
+  //get the current scroll offset
+  function getScrollTop() {
+    return $(window).scrollTop();
+  }
+
+  //calculate the desktop nav position if the window has been resized
+  function positionNavOnResize() {
     if(window.innerWidth >= 1200) {
       $("#nav").css({
         left: 0,
@@ -92,13 +152,13 @@ $(function() {
       hideContactMenu();
       $("#nav").css({top: 0});
     }
-  });
+  }
 
-  $(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
 
-    console.log(scroll);
-    
+  //position the desktop navbar according to the scroll position
+  function positionDesktopNav() {
+
+    var scroll = getScrollTop();
 
     if (!isMobileNav()) {
       if(scroll >= 140) {
@@ -133,7 +193,11 @@ $(function() {
         });
       }
     }
+  }
 
+
+  //show or hide the scroll button according to the scroll position
+  function toggleScrollTopButton() {
     if(scroll >= 400) {
       scrollTop.css({
         'display': 'block'
@@ -143,8 +207,17 @@ $(function() {
         'display': 'none'
       });
     }
-});
+  }
 
+  //hides the gdpr modal
+  function hideGdprModal() {
+    $("#gdpr-modal-overlay").css({
+      'display': 'none'
+    });
+    isGDPROverlayShown = false;
+  }
+
+  //hides the contact menu
   function hideContactMenu() {
     isMobileContactOpen = false;
     $(dotsIcon).removeClass('active');
@@ -153,6 +226,7 @@ $(function() {
     });
   }
 
+  //shows the contact menu
   function showContactMenu() {
     if(isMobileMenuOpen) {
       hideMobileMenu();
@@ -164,12 +238,14 @@ $(function() {
     });;
   }
 
+  //hides the mobile menu by changing the left position
   function hideMobileMenu() {
     isMobileMenuOpen = false;
       $(burgerIcon).removeClass('active');
       navContainer.css({left: -270});
   }
 
+  //shows the mobile menu by changing the left position
   function showMobileMenu() {
     if(isMobileContactOpen) {
       hideContactMenu();
@@ -183,10 +259,21 @@ $(function() {
     $(".display-none").removeClass('display-none');
   }
 
+  //checks to see if the mobile navigation should be shown
   function isMobileNav() {
     return window.innerWidth < 1200;
   }
 
-  removeDisplayNoneSubMenues();
+  function decrementGDPRCounter() {
+    hideGDPROverlayCounter--;
+    console.log(hideGDPROverlayCounter);
+    $('#gdpr-timer-value').text(hideGDPROverlayCounter);
+    if(hideGDPROverlayCounter == 0) {
+      clearInterval(gdprCountdown);
+      hideGdprModal();
+    }
+  }
 
+  registerEventListeners();
+  removeDisplayNoneSubMenues();
 });
